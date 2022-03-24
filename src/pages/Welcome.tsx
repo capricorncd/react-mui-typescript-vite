@@ -6,12 +6,13 @@
 import React from 'react'
 import { Container, Button, Typography } from '@mui/material'
 import CopyRight from '@/Components/CopyRight'
+import Logo from '~/favicon.svg'
 
 export default function Welcome() {
   return (
     <Container className="align-center">
       <div className="pt50">
-        <img src="/static/favicon.svg" width="180" height="180" alt="logo" />
+        <img src={Logo} width="180" height="180" alt="logo" />
       </div>
       <Typography variant="h2" component="div" gutterBottom>
         react-mui-typescript-vite
