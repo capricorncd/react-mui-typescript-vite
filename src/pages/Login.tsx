@@ -7,7 +7,7 @@ import React, { useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import { useAuth } from '@/Components/Auth/UseAuth'
 import { Container, Button, Card, CardHeader, CardContent, Stack, TextField } from '@mui/material'
-import CopyRight from "@/Components/CopyRight";
+import CopyRight from '@/Components/CopyRight'
 
 export default function Login() {
   const [disabled, setDisabled] = useState(false)
