@@ -9,7 +9,6 @@ import { ProvideAuth } from '@/Components/Auth'
 import PrivateRoute from '@/Components/PrivateRoute'
 
 const Welcome = lazy(() => import('./Welcome'))
-const Login = lazy(() => import('./Login'))
 const Home = lazy(() => import('./Home'))
 
 export default function App() {
@@ -20,11 +19,6 @@ export default function App() {
           <Route path="/" exact>
             <Suspense fallback="loading...">
               <Welcome />
-            </Suspense>
-          </Route>
-          <Route path="/login">
-            <Suspense fallback="loading...">
-              <Login />
             </Suspense>
           </Route>
           <PrivateRoute path="/home">

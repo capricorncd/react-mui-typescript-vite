@@ -4,12 +4,15 @@
  * Date: 2022/03/24 10:43:17 (GMT+0900)
  */
 import { useState } from 'react'
-import { CommonResponseData, UseAuth, UserInfo } from '@/types'
+import { CommonResponseData, UseAuth, UserInfo, SignInFormData } from '@/types'
 
 export function useProvideAuth(): UseAuth {
   const [user, setUser] = useState<UserInfo | null>(null)
 
-  async function signIn(): Promise<UserInfo> {
+  async function signIn(form: SignInFormData): Promise<UserInfo> {
+    if (!form.email || !form.password) {
+      throw new Error('Sign in failed')
+    }
     await asyncFun()
     // console.log('signIn')
     const data = {
@@ -42,6 +45,6 @@ function asyncFun(): Promise<void> {
   return new Promise<void>((resolve) => {
     setTimeout(() => {
       resolve()
-    }, 1000)
+    }, 2000)
   })
 }

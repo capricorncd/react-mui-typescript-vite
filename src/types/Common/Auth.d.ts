@@ -3,10 +3,8 @@
  * https://github.com/capricorncd
  * Date: 2022/03/24 15:43:04 (GMT+0900)
  */
-export interface UserInfo {
-  userName: string
-  userId: number
-}
+import { UserInfo } from './User'
+import { SignInFormData } from '../Sign'
 
 export interface CommonResponseData {
   code: number
@@ -15,6 +13,6 @@ export interface CommonResponseData {
 
 export interface UseAuth {
   user: UserInfo | null
-  signIn: () => Promise<UserInfo>
+  signIn: (form: SignInFormData) => Promise<UserInfo>
   signOut: () => Promise<CommonResponseData>
 }

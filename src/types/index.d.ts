@@ -5,7 +5,11 @@
  */
 import React from 'react'
 import store from '@/stores'
-export * from './Auth'
+import { SxProps } from '@mui/system'
+import { Theme } from '@mui/material/styles'
+
+export * from './Common'
+export * from './Sign'
 
 export interface AnyObject {
   [key: string]: any
@@ -19,6 +23,7 @@ export interface DefaultProps {
   children?: JSX.Element | React.ReactNode
   style?: AnyObject
   data?: AnyObject | AnyObject[] | null
+  sx?: SxProps<Theme>
 }
 
 export type RootState = ReturnType<typeof store.getState>

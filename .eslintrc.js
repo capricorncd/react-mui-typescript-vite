@@ -10,7 +10,6 @@ module.exports = {
     node: true,
     es6: true,
   },
-  // parser: 'vue-eslint-parser',
   extends: [
     // 'plugin:vue/recommended',
     'prettier',
@@ -26,6 +25,8 @@ module.exports = {
     'react-hooks',
     '@typescript-eslint',
   ],
+  // parser: 'vue-eslint-parser',
+  // parser: '@typescript-eslint/parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
@@ -84,5 +85,14 @@ module.exports = {
     // '@typescript-eslint/interface-name-prefix': [2, { prefixWithI: 'always' }],
     '@typescript-eslint/explicit-function-return-type': ['off'],
     '@typescript-eslint/no-explicit-any': ['off'], // 先忽略，但是尽量少用 any
+    // allow async-await
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'never',
+        named: 'never',
+        asyncArrow: 'always',
+      },
+    ],
   },
 }

@@ -4,26 +4,23 @@
  * Date: 2022/03/24 15:51:03 (GMT+0900)
  */
 import React from 'react'
-import { Container, Button, Typography } from '@mui/material'
-import CopyRight from '@/Components/CopyRight'
-import Logo from '~/favicon.svg'
+import { Grid, CssBaseline, Paper } from '@mui/material'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+import Slogan from '@/Components/Welcome/Slogan'
+import SignInForm from '@/Components/Welcome/SignInForm'
+
+const theme = createTheme()
 
 export default function Welcome() {
   return (
-    <Container className="align-center">
-      <div className="pt50">
-        <img src={Logo} width="180" height="180" alt="logo" />
-      </div>
-      <Typography variant="h2" component="div" gutterBottom>
-        react-mui-typescript-vite
-      </Typography>
-      <Typography>
-        This is a background management system developed by React, Material UI, TypeScript and Vite.
-      </Typography>
-      <Button variant="outlined" size="large" href="#/home" className="mv50">
-        Home
-      </Button>
-      <CopyRight />
-    </Container>
+    <ThemeProvider theme={theme}>
+      <Grid container component="main" sx={{ height: '100vh' }}>
+        <CssBaseline />
+        <Slogan />
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+          <SignInForm />
+        </Grid>
+      </Grid>
+    </ThemeProvider>
   )
 }
