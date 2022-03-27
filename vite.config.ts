@@ -7,6 +7,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 import eslintPlugin from 'vite-plugin-eslint'
+import pkg from './package.json'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -40,5 +41,8 @@ export default defineConfig({
         // additionalData: `@import "src/assets/scss/vars/index.scss";`,
       },
     },
+  },
+  build: {
+    outDir: resolve('../capricorncd.github.io/demos', pkg.name),
   },
 })
