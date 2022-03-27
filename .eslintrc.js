@@ -43,7 +43,6 @@ module.exports = {
     'prettier/prettier': 'error',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'space-before-function-paren': [2, 'never'], // function 的圆括号之前是否使用空格
     'array-bracket-spacing': 2,
     'no-var': 2,
     'no-eval': 2,
