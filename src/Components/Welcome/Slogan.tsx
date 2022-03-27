@@ -4,7 +4,7 @@
  * Date: 2022/03/27 11:10:06 (GMT+0900)
  */
 import React from 'react'
-import Logo from '~/logo.svg'
+import Logo from '@/assets/img/logo.svg'
 import { Grid, Typography, Box } from '@mui/material'
 
 const TEXT_SHADOW = {
