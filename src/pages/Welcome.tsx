@@ -5,22 +5,17 @@
  */
 import React from 'react'
 import { Grid, CssBaseline, Paper } from '@mui/material'
-import { createTheme, ThemeProvider } from '@mui/material/styles'
 import Slogan from '@/Components/Welcome/Slogan'
 import SignInForm from '@/Components/Welcome/SignInForm'
 
-const theme = createTheme()
-
 export default function Welcome() {
   return (
-    <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh' }}>
-        <CssBaseline />
-        <Slogan />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <SignInForm />
-        </Grid>
+    <Grid container component="main" sx={{ height: '100vh' }}>
+      <CssBaseline />
+      <Slogan />
+      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <SignInForm />
       </Grid>
-    </ThemeProvider>
+    </Grid>
   )
 }

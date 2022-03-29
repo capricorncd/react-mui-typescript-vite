@@ -4,6 +4,6 @@
  * Date: 2022/03/27 19:05:25 (GMT+0900)
  */
 export interface UserInfo {
-  userName: string
+  username: string
   userId: number
 }

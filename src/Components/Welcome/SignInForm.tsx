@@ -4,7 +4,7 @@
  * Date: 2022/03/27 10:53:13 (GMT+0900)
  */
 import React, { useState } from 'react'
-import { Box, Avatar, TextField, Typography, FormControlLabel, Button, Checkbox, Grid, Link } from '@mui/material'
+import { Box, Avatar, TextField, Typography, FormControlLabel, Checkbox, Grid, Link } from '@mui/material'
 import { LoadingButton } from '@mui/lab'
 import { LockOutlined as LockOutlinedIcon } from '@mui/icons-material'
 import CopyRight from '@/Components/CopyRight'
@@ -64,6 +64,9 @@ export default function SignInForm() {
       <Typography component="h1" variant="h5">
         Sign in
       </Typography>
+      <Typography variant="body2" color="text.secondary">
+        Sign in on the internal platform
+      </Typography>
       <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
         <TextField
           margin="normal"
@@ -74,6 +77,7 @@ export default function SignInForm() {
           name="email"
           autoComplete="email"
           autoFocus
+          value="kaneoki1984@gmail.com"
         />
         <TextField
           margin="normal"
@@ -84,20 +88,21 @@ export default function SignInForm() {
           type="password"
           id="password"
           autoComplete="current-password"
+          value="123456"
         />
         <FormControlLabel
           control={<Checkbox name="remember" value={REMEMBER_TEXT} color="primary" />}
           label="Remember me"
         />
-        {isSubmit ? (
-          <LoadingButton loading fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-            Loading ...
-          </LoadingButton>
-        ) : (
-          <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-            Sign In
-          </Button>
-        )}
+        <LoadingButton
+          type="submit"
+          loading={isSubmit}
+          fullWidth
+          variant="contained"
+          size="large"
+          sx={{ mt: 3, mb: 2 }}>
+          Sign In
+        </LoadingButton>
         <Grid container>
           <Grid item xs>
             <Link href="#" variant="body2">

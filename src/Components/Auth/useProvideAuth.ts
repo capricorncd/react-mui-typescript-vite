@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { CommonResponseData, UseAuth, UserInfo, SignInFormData } from '@/types'
 
 export function useProvideAuth(): UseAuth {
-  const [user, setUser] = useState<UserInfo | null>(null)
+  const [user, setUser] = useState<UserInfo | null>({ username: '', userId: 9527 })
 
   async function signIn(form: SignInFormData): Promise<UserInfo> {
     if (!form.email || !form.password) {
@@ -16,7 +16,7 @@ export function useProvideAuth(): UseAuth {
     await asyncFun()
     // console.log('signIn')
     const data = {
-      userName: 'Capricorncd',
+      username: 'Capricorncd',
       userId: 9527,
     }
     setUser(data)

@@ -19,6 +19,16 @@ $ yarn build
 
 ## UI
 
+Default Theme
+
+https://mui.com/customization/default-theme/?expand-path=$.palette
+
+Icons
+
+https://mui.com/components/material-icons/
+
+Figma
+
 https://www.figma.com/community/file/912837788133317724
 
 https://mui.com/store/items/figma-react/?utm_source=docs&utm_medium=referral&utm_campaign=installation-figma
