@@ -8,15 +8,20 @@ import { DefaultProps } from '@/types'
 import { Grid, PaletteMode } from '@mui/material'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import Settings from './Settings'
-import ColorModeContext from './ColorModeContext'
+import ColorModeContext from '../ColorMode/ColorModeContext'
+import { storage } from '@/helpers'
+import { THEME_CACHE_KEY, themeOptions } from '@/constants'
 
 export default function Layout(props: DefaultProps) {
-  const [mode, setMode] = useState<PaletteMode>('light')
+  const cacheMode = storage.get(THEME_CACHE_KEY, 'light')
+  const [mode, setMode] = useState<PaletteMode>(cacheMode)
 
   const colorMode = useMemo(
     () => ({
       toggleColorMode: (newMode: PaletteMode) => {
         setMode(newMode)
+        // update cache
+        storage.set(THEME_CACHE_KEY, newMode)
       },
     }),
     [],
@@ -26,6 +31,7 @@ export default function Layout(props: DefaultProps) {
     () =>
       createTheme({
         palette: {
+          ...themeOptions.palette,
           mode,
         },
       }),

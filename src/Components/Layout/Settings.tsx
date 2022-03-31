@@ -23,7 +23,7 @@ import {
   PaletteMode,
 } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import ColorModeContext from './ColorModeContext'
+import ColorModeContext from '../ColorMode/ColorModeContext'
 
 // Settings button
 const SettingsButton = styled(IconButton)(

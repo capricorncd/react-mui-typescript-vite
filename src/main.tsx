@@ -7,18 +7,15 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
-import { teal, pink } from '@mui/material/colors'
 import store from '@/stores'
 import App from './pages/App'
+import { themeOptions, THEME_CACHE_KEY } from './constants'
+import { storage } from './helpers'
 
 const theme = createTheme({
   palette: {
-    primary: {
-      main: teal[500],
-    },
-    secondary: {
-      main: pink[500],
-    },
+    ...themeOptions.palette,
+    mode: storage.get(THEME_CACHE_KEY, 'light'),
   },
 })
 
