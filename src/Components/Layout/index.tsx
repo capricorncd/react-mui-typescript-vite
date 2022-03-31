@@ -5,32 +5,15 @@
  */
 import React, { useState, useMemo } from 'react'
 import { DefaultProps } from '@/types'
-import {
-  Box,
-  PaletteMode,
-  CssBaseline,
-  Toolbar,
-  IconButton,
-  Typography,
-  Divider,
-  List,
-  ListItemIcon,
-  ListItemText,
-  ListItemButton,
-} from '@mui/material'
-import {
-  Menu as IconMenu,
-  ChevronLeft as IconChevronLeft,
-  ChevronRight as IconChevronRight,
-  Inbox as IconInbox,
-  Mail as IconMail,
-} from '@mui/icons-material'
+import { Box, PaletteMode, CssBaseline, Toolbar, IconButton, Typography, Divider } from '@mui/material'
+import { Menu as IconMenu, ChevronLeft as IconChevronLeft, ChevronRight as IconChevronRight } from '@mui/icons-material'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import Settings from './Settings'
 import ColorModeContext from '../ColorMode/ColorModeContext'
 import { storage } from '@/helpers'
 import { DRAWER_OPEN_FLAG_CACHE_KEY, THEME_CACHE_KEY, themeOptions } from '@/constants'
 import { AppBar, Drawer, DrawerHeader } from './Parts'
+import Menu from './Menu'
 
 export default function Layout(props: DefaultProps) {
   const cacheMode = storage.get(THEME_CACHE_KEY, 'light')
@@ -101,50 +84,7 @@ export default function Layout(props: DefaultProps) {
               </IconButton>
             </DrawerHeader>
             <Divider />
-            <List>
-              {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                <ListItemButton
-                  selected={index === 0}
-                  key={text}
-                  sx={{
-                    minHeight: 48,
-                    justifyContent: open ? 'initial' : 'center',
-                    px: 2.5,
-                  }}>
-                  <ListItemIcon
-                    sx={{
-                      minWidth: 0,
-                      mr: open ? 3 : 'auto',
-                      justifyContent: 'center',
-                    }}>
-                    {index % 2 === 0 ? <IconInbox /> : <IconMail />}
-                  </ListItemIcon>
-                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                </ListItemButton>
-              ))}
-            </List>
-            <Divider />
-            <List>
-              {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                <ListItemButton
-                  key={text}
-                  sx={{
-                    minHeight: 48,
-                    justifyContent: open ? 'initial' : 'center',
-                    px: 2.5,
-                  }}>
-                  <ListItemIcon
-                    sx={{
-                      minWidth: 0,
-                      mr: open ? 3 : 'auto',
-                      justifyContent: 'center',
-                    }}>
-                    {index % 2 === 0 ? <IconInbox /> : <IconMail />}
-                  </ListItemIcon>
-                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                </ListItemButton>
-              ))}
-            </List>
+            <Menu open={open} />
           </Drawer>
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <DrawerHeader />
@@ -159,16 +99,6 @@ export default function Layout(props: DefaultProps) {
               tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget arcu dictum varius duis at
               consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien faucibus et molestie
               ac.
-            </Typography>
-            <Typography paragraph>
-              Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla facilisi etiam
-              dignissim diam. Pulvinar elementum integer enim neque volutpat ac tincidunt. Ornare suspendisse sed nisi
-              lacus sed viverra tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis sed odio morbi.
-              Euismod lacinia at quis risus sed vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra
-              accumsan in. In hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-              tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin nibh sit. Ornare
-              aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-              posuere sollicitudin aliquam ultrices sagittis orci a.
             </Typography>
           </Box>
           <Settings />
