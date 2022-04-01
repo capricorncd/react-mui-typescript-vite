@@ -101,11 +101,23 @@ export default function Settings() {
 
   const colorMode = React.useContext(ColorModeContext)
 
+  /**
+   * toggle visible for the settings layer
+   * @param event
+   */
   const toggleDrawer = (event: React.KeyboardEvent | React.MouseEvent) => {
     const key = (event as React.KeyboardEvent).key
     const isKeydown = event.type === 'keydown'
     if (isKeydown && (key === 'Tab' || key === 'Shift')) return
     setVisible((b) => !b)
+  }
+
+  /**
+   * save settings and hide settings layer
+   */
+  const saveSettings = () => {
+    colorMode.toggleColorMode(themeMode)
+    setVisible(false)
   }
 
   return (
@@ -158,13 +170,7 @@ export default function Settings() {
             <FormControlLabel control={<Checkbox />} label="Label 002" />
           </Box>
 
-          <Button
-            onClick={() => colorMode.toggleColorMode(themeMode)}
-            type="button"
-            fullWidth
-            variant="contained"
-            size="large"
-            sx={{ mt: 3, mb: 2 }}>
+          <Button onClick={saveSettings} type="button" fullWidth variant="contained" size="large" sx={{ mt: 3, mb: 2 }}>
             Save Settings
           </Button>
         </Box>
