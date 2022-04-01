@@ -52,7 +52,9 @@ const HeaderBox = styled(Box)(
     boxAlign: 'center',
     boxPack: 'justify',
     justifyContent: 'space-between',
-    padding: '1rem 1.5rem',
+    pl: '1.5rem',
+    pr: 1,
+    height: '4rem',
   }),
 )
 
@@ -70,7 +72,6 @@ const HeaderTitle = styled(Typography)(
 // close button that Drawer
 const CloseButton = styled(Button)(
   sx({
-    mr: -1,
     minWidth: 'auto',
     color: 'primary.contrastText',
     opacity: 0.6,
@@ -113,7 +114,7 @@ export default function Settings() {
         <IconTune sx={{ color: '#fff' }} />
       </SettingsButton>
 
-      <Drawer anchor="right" open={visible} onClose={toggleDrawer}>
+      <Drawer anchor="right" open={visible} onClose={toggleDrawer} sx={{ zIndex: 1202 }}>
         <HeaderBox>
           <HeaderTitle variant="h6">Theme settings</HeaderTitle>
           <CloseButton onClick={toggleDrawer}>
