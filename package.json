@@ -11,7 +11,7 @@
     "vite",
     "cypress",
     "eslint",
-    "prettierrc",
+    "prettier",
     "css-modules",
     "react hooks"
   ],
