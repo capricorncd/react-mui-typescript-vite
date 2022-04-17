@@ -7,6 +7,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 import eslintPlugin from 'vite-plugin-eslint'
+import VitePluginRemoveTestAttributes from './scripts/VitePluginRemoveTestAttributes'
 import pkg from './package.json'
 
 // https://vitejs.dev/config/
@@ -33,7 +34,10 @@ export default defineConfig({
   },
   plugins: [
     reactRefresh(),
-    eslintPlugin({ fix: true }),
+    eslintPlugin({
+      // fix: true
+    }),
+    VitePluginRemoveTestAttributes(),
   ],
   css: {
     preprocessorOptions: {

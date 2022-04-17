@@ -78,6 +78,7 @@ export default function SignInForm() {
           autoComplete="email"
           autoFocus
           value="kaneoki1984@gmail.com"
+          data-test-id="SignInEmail"
         />
         <TextField
           margin="normal"
@@ -89,10 +90,12 @@ export default function SignInForm() {
           id="password"
           autoComplete="current-password"
           value="123456"
+          data-test-id="SignInPassword"
         />
         <FormControlLabel
           control={<Checkbox name="remember" value={REMEMBER_TEXT} color="primary" />}
           label="Remember me"
+          data-test-id="SignInRemember"
         />
         <LoadingButton
           type="submit"
@@ -100,17 +103,18 @@ export default function SignInForm() {
           fullWidth
           variant="contained"
           size="large"
+          data-test-id="SignInSubmitBtn"
           sx={{ mt: 3, mb: 2 }}>
           Sign In
         </LoadingButton>
         <Grid container>
           <Grid item xs>
-            <Link href="#" variant="body2">
+            <Link href="#" variant="body2" data-test-id="SignInForgot">
               Forgot password?
             </Link>
           </Grid>
           <Grid item>
-            <Link href="#" variant="body2">
+            <Link href="#" variant="body2" data-test-id="SignUpLink">
               {"Don't have an account? Sign Up"}
             </Link>
           </Grid>
