@@ -7,7 +7,7 @@ import { Plugin } from 'vite'
 
 export default function VitePluginRemoveTestAttributes(): Plugin {
   return {
-    name: 'BuildRemoveAttributes',
+    name: 'BuildRemoveTestAttributes',
     apply: 'build',
     transform(src: string) {
       return {
