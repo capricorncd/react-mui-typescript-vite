@@ -89,5 +89,3 @@ sw.*
 # Vim swap files
 *.swp
 
-# cypress
-cypress/integration/**/*.spec.js

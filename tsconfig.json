@@ -19,7 +19,7 @@
       "@/*": ["src/*"],
       "~/*": ["static/*"]
     },
-    "types": ["cypress"],
+    "types": [],
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   }
 }

@@ -7,14 +7,14 @@ https://github.com/capricorncd/dev3cli
 
 ```bash
 # serve with hot reload at localhost:9527
-$ npm run dev
-# or
 $ yarn dev
+# or
+$ npm run dev
 
 # build static project
-$ npm run build
-# or
 $ yarn build
+# or
+$ npm run build
 ```
 
 ## UI
@@ -42,7 +42,5 @@ https://v5.reactrouter.com/web/guides/quick-start
 https://vitejs.dev/
 
 https://mui.com/
-
-https://www.cypress.io/
 
 https://www.typescriptlang.org/
