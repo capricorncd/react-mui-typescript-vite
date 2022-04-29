@@ -20,6 +20,6 @@
       "~/*": ["static/*"]
     },
     "types": [],
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "plugins": []
   }
 }
