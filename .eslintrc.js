@@ -18,13 +18,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
   ],
-  plugins: [
-    'prettier',
-    // 'vue',
-    'react',
-    'react-hooks',
-    '@typescript-eslint',
-  ],
+  plugins: ['prettier', 'react', 'react-hooks', '@typescript-eslint'],
   // parser: 'vue-eslint-parser',
   // parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -55,16 +49,6 @@ module.exports = {
     eqeqeq: [2, 'always', { null: 'ignore' }],
     'object-curly-spacing': [2, 'always'],
     'nonblock-statement-body-position': 2, // if 语句后必须跟大括号
-    // 'vue/max-attributes-per-line': [
-    //   0,
-    //   {
-    //     singleline: 1,
-    //     multiline: {
-    //       max: 1,
-    //       allowFirstLine: false,
-    //     },
-    //   },
-    // ],
 
     // 设置typescript-eslint规则
     // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
